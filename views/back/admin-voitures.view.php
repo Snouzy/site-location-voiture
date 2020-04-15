@@ -35,33 +35,32 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <?php foreach (Voiture::getAllCarsWithLabels() as $car) { ?>
-                        <tr>
-                            <td><?= $car->getModele() ?> </td>
-                            <td class="center"><?= $car->getStatut() ?></td>
-                            <td class="center"><?= $car->getPrixJournalier() ?></td>
-                            <td class="center" style="width: 20%">
-                                    <?php foreach($car->getImages() as $image) {
-                                        echo "<img class='thumbnail-voiture-admin' src='assets/img/car/" . $image['url_image'] .".jpg'/>";
-                                    } 
-                                    ?>
-                            </td>
-                            <td class="center">
-                                <a class="btn btn-action btn-action-afficher" href="#">
-                                    <i class="glyphicon glyphicon-zoom-in icon-white"></i>
-                                    Afficher
-                                </a>
-                                <a class="btn btn-action btn-action-modifier" href="#">
-                                    <i class="glyphicon glyphicon-edit icon-white"></i>
-                                    Modifier
-                                </a>
-                                <a class="btn btn-action btn-action-supprimer btn-danger" href="#">
-                                    <i class="glyphicon glyphicon-trash icon-white"></i>
-                                    Supprimer
-                                </a>
-                            </td>
-                        </tr>
+                            <form action="#" method="GET">
+                                <tr>
+                                    <td><?= $car->getModele() ?> </td>
+                                    <td class="center"><?= $car->getStatut() ?></td>
+                                    <td class="center"><?= $car->getPrixJournalier() ?></td>
+                                    <td class="center" style="width: 20%">
+                                            <?php foreach($car->getImages() as $image) {
+                                                echo "<img onClick='submit()' class='thumbnail-voiture-admin' src='assets/img/car/" . $image['url_image'] .".jpg'/>";
+                                            } 
+                                            ?>
+                                    </td>
+                                    <td class="center">
+                                        <button type="submit" value="afficher" name="action" class="btn btn-action btn-action-afficher">
+                                            <i class="fa fa-eye icon-white"></i>
+                                        </button>
+                                        <button type="submit" value="modifier" name="action" class="btn btn-action btn-action-modifier">
+                                            <i class="fa fa-pencil icon-white"></i>
+                                        </button>
+                                        <button type="submit" value="supprimer" name="action" class="btn btn-action btn-action-supprimer btn-danger">
+                                         <i class="fa fa-trash icon-white"></i>
+                                        </button>
+                                    </td>
+                                    <input type="hidden" name="idVoiture" id="idVoiture" value="<?= $car->getId()?>" />
+                                </tr>
+                            </form>
                         <?php } ?>
                     </tbody>
                 </table>

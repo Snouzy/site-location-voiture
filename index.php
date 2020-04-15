@@ -19,6 +19,7 @@ if(isset($_GET['page']) && !empty($_GET['page'])) {
     if($_GET['page'] === 'login') getLogin();
     if($_GET['page'] === 'admin') getAdmin();
     if($_GET['page'] === 'voitures-admin') getVoituresAdmin();
+    if($_GET['page'] === 'edit') getEditPage();
 } else {
     getHomepage();
 }

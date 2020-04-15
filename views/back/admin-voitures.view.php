@@ -47,17 +47,19 @@
                                             } 
                                             ?>
                                     </td>
+                                    
                                     <td class="center">
-                                        <button type="submit" value="afficher" name="action" class="btn btn-action btn-action-afficher">
-                                            <i class="fa fa-eye icon-white"></i>
-                                        </button>
-                                        <button type="submit" value="modifier" name="action" class="btn btn-action btn-action-modifier">
-                                            <i class="fa fa-pencil icon-white"></i>
-                                        </button>
-                                        <button type="submit" value="supprimer" name="action" class="btn btn-action btn-action-supprimer btn-danger">
-                                         <i class="fa fa-trash icon-white"></i>
-                                        </button>
-                                    </td>
+                                            <a href="?page=edit&id=<?= $car->getId() ?>" type="submit" value="afficher" name="action" class="btn btn-action btn-action-afficher">
+                                                <i class="fa fa-eye icon-white"></i>
+                                            </a>
+                                        
+                                            <a href="?page=edit&id=<?= $car->getId() ?>" type="submit" value="modifier" name="action" class="btn btn-action btn-action-modifier">
+                                                <i class="fa fa-pencil icon-white"></i>
+                                            </a>
+                                            <a href="?page=edit&id=<?= $car->getId() ?>" type="submit" value="supprimer" name="action" class="btn btn-action btn-action-supprimer btn-danger">
+                                                <i class="fa fa-trash icon-white"></i>
+                                            </a>
+                                        </td>
                                     <input type="hidden" name="idVoiture" id="idVoiture" value="<?= $car->getId()?>" />
                                 </tr>
                             </form>

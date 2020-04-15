@@ -64,7 +64,7 @@
                             <a href="#">Ajouter une voiture</a>
                         </li>
                         <li>
-                            <a href="#">Home 3</a>
+                            <a href="?page=edit">Modifier les voitures</a>
                         </li>
                     </ul>
                 </li>

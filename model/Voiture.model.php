@@ -7,8 +7,17 @@ class VoitureManager {
         $pdo = Database::getPDO();
         $stmt = $pdo->prepare("SELECT * from voiture");
         $stmt->execute();
-        $voitures = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $voitures;
+        $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $cars;
+    }
+
+    public static function getCarById($id) {
+        $pdo = Database::getPDO();
+        $stmt = $pdo->prepare("SELECT * from voiture WHERE id=:id");
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $car = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $car;
     }
 
     public static function getImagesVoiture($id) {

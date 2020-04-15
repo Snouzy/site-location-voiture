@@ -55,4 +55,8 @@ function getVoituresAdmin() {
     }
 }
 
+function getEditPage() {
+    require_once "views/back/edit.view.php";
+}
+
 ?>
